@@ -2,7 +2,6 @@ function[hp] = powerAllocation( rates )
     
 streams=length(rates);
 if streams>1
-    % disp('Hey there! Calculating optimal power allocation')
     cvx_begin
         cvx_quiet('true');
         variable X(streams,1)
