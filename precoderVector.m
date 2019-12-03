@@ -45,13 +45,11 @@ for n2=1:Nsolver2
             bBest=bNew;       
             
         else  %%% found a worse beta, thus updating theta
-              %%% disp('Worse beta, thus updating theta')
              theta=2*pi*rand(1,t+1);
         end
                 %%% all users have very close SNR thus almost optimal
         if max( ((H(:,sigma)'*bBest)').'.*(H(:,sigma)'*bBest))...
                         -min( ((H(:,sigma)'*bBest)').'.*(H(:,sigma)'*bBest))<delta
-            %disp('Small error')
             break;
         end
     end    
